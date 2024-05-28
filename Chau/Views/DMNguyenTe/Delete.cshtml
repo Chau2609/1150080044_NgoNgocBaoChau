@@ -1,0 +1,32 @@
+﻿@model Chau.Models.DMNguyenTe
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa</h2>
+
+<div>
+    <h4>DMNguyenTe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNguyenTe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNguyenTe)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại trang chủ", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,48 @@
+﻿@model Chau.Models.ChiTietHopDong
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa</h2>
+
+<div>
+    <h4>ChiTietHopDong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMNguyenTe.TenNguyenTe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMNguyenTe.TenNguyenTe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HopDongVay.SoHopDong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HopDongVay.SoHopDong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại trang chủ", "Index")
+        </div>
+    }
+</div>

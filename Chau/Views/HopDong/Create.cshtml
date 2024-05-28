@@ -1,0 +1,68 @@
+﻿@model Chau.Models.HopDongVay
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Tạo</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>HopDongVay</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoHopDong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoHopDong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoHopDong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayLapHopDong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgayLapHopDong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NgayLapHopDong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaChiNhanh, "Mã Chi Nhánh ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownList("MaChiNhanh", ViewBag.MaChiNhanhList as SelectList, "Chọn", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaChiNhanh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaKhachHang, "Mã Khách Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownList("MaKhachHang", ViewBag.MaKhachHangList as SelectList, "Chọn", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaKhachHang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaThoiHan, "Mã Thời Hạn", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownList("MaThoiHan", ViewBag.MaThoiHanList as SelectList, "Chọn", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaThoiHan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại trang chủ", "Index")
+</div>

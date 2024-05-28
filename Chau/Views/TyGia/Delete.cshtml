@@ -1,0 +1,40 @@
+﻿@model Chau.Models.TyGia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa</h2>
+
+<div>
+    <h4>TyGia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayApDungGiaMoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayApDungGiaMoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuyRaVietNamDong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuyRaVietNamDong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại trang chủ", "Index")
+        </div>
+    }
+</div>
